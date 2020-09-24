@@ -1,0 +1,55 @@
+{
+  "name": "maaa",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "@m3dicine/core": "^1.0.89-alpha",
+    "@m3dicine/form": "^1.0.13",
+    "@m3dicine/icons": "^1.0.18",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "autoprefixer": "^9.8.5",
+    "axios": "^0.20.0",
+    "babel-plugin-macros": "^2.8.0",
+    "form": "^0.2.4",
+    "icons": "^1.0.0",
+    "postcss-cli": "^7.1.1",
+    "react": "^16.13.1",
+    "react-bootstrap-validation": "^0.1.11",
+    "react-dom": "^16.13.1",
+    "react-router": "^3.2.6",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.3",
+    "reactjs-popup": "^2.0.4",
+    "styled-components": "^5.1.1",
+    "tailwind.macro": "^1.0.0-alpha.10",
+    "tailwindcss": "^1.5.2"
+  },
+  "scripts": {
+    "start": "npm run watch:css & react-scripts start",
+    "build": "npm run build:css react-scripts build --history-api-fallback",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build:css": "postcss src/tailwind.css -o src/index.css",
+    "watch:css": "postcss src/tailwind.css -o src/index.css"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
