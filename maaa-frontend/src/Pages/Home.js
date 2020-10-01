@@ -46,7 +46,7 @@ Patients = [
                 </div>
 
                 <div class="flex content-center flex-wrap">
-                    <button>View Recent Samples</button>
+                    <button onClick={() => this.props.handleToken('asd')}>View Recent Samples</button>
                 </div>
             </div>
         )

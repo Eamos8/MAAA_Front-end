@@ -1,5 +1,7 @@
 import React from 'react'
 import { StetheeProHeaderLightSVG } from '@m3dicine/icons'
+import { Link } from 'react-router';
+
 
 //Header banner with Stethee Icon
 class Header extends React.Component {
@@ -10,6 +12,24 @@ class Header extends React.Component {
                 <div class = "items-center">
                     <StetheeProHeaderLightSVG class="h-16"/>
                 </div>
+
+                <Link to="/home">
+                    <button class='text-white' type="button">
+                        Home!
+                    </button>
+                </Link>
+
+                <Link to="/login">
+                    <button class='text-white' type="button">
+                        Login!
+                    </button>
+                </Link>
+
+                <Link to="/annotate">
+                    <button class='text-white' type="button">
+                        Annotate!
+                    </button>
+                </Link>
             </div>
         )
     }

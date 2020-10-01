@@ -3,6 +3,8 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faWrench } from "@fortawesome/free-solid-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from 'axios'
+
 
 //Card that displays patient information and allows user to modify/delete user or add new sample
 class PatientCard extends React.Component {
@@ -10,8 +12,37 @@ class PatientCard extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = { file: '', msg: '', token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Zjc1MjRhOWY2ZmIxMjI5YzQzOTk1MDciLCJpYXQiOjE2MDE1MTI2MTd9.epUEgnsc0aGEMrp1P-QVRanI5pU5vKvbOQ-OO6Y6Nn0' };
     }
 
+    onFileChange = (event) => {
+        this.setState({
+            file: event.target.files[0]
+        });
+    }
+
+    uploadFileData = (event) => {
+        event.preventDefault();
+        this.setState({ msg: '' });
+
+        let data = new FormData();
+        data.append('file', this.state.file);
+
+        const t = this.state.token;
+
+        axios.post('http://localhost:3000/file/upload/single', data, {
+            headers: {
+                'Authorization': `Bearer ${t}`
+            }
+        })
+            .then((res) => {
+                console.log('file has uploaded')
+                console.log(res.data)
+            }).catch((error) => {
+                console.log(error)
+            });
+
+    }
 
     render() {
         return (
@@ -37,8 +68,9 @@ class PatientCard extends React.Component {
                         <FontAwesomeIcon icon={faWrench} />
                     </div>
                     <div class="pr-10 cursor-pointer flex flex-wrap" onClick={() => console.log('yes')}>
-                        <p class="px-2">Add New Sample</p>
+                        <input onChange={this.onFileChange} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="file" name="UploadAudio" accept=".mp3, .wav"/>
                         <FontAwesomeIcon icon={faPlus} />
+                        <button disabled={!this.state.file} onClick={this.uploadFileData}>Upload</button>
                     </div>
                 </div>
                 

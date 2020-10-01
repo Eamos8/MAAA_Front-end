@@ -1,11 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Local settings (.vs)",
     "\\maaa-frontend",
     "\\maaa-frontend\\src",
-    "\\maaa-frontend\\src\\Components"
+    "\\maaa-frontend\\src\\Components",
+    "\\maaa-frontend\\src\\Pages"
   ],
-  "SelectedNode": "\\maaa-frontend\\package.json",
+  "SelectedNode": "\\maaa-frontend\\src\\App.jsx",
   "PreviewInSolutionExplorer": false
 }
