@@ -14,19 +14,19 @@ class Header extends React.Component {
                 </div>
 
                 <Link to="/home">
-                    <button class='text-white' type="button">
+                    <button class='text-white mx-2' type="button">
                         Home!
                     </button>
                 </Link>
 
                 <Link to="/login">
-                    <button class='text-white' type="button">
+                    <button class='text-white mx-2' type="button">
                         Login!
                     </button>
                 </Link>
 
                 <Link to="/annotate">
-                    <button class='text-white' type="button">
+                    <button class='text-white mx-2' type="button">
                         Annotate!
                     </button>
                 </Link>

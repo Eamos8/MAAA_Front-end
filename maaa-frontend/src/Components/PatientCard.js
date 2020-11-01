@@ -4,6 +4,8 @@ import { faWrench } from "@fortawesome/free-solid-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios'
+import ModifyPatientForm from './ModifyPatientForm';
+import WidgetBar from './WidgetBar'
 
 
 //Card that displays patient information and allows user to modify/delete user or add new sample
@@ -12,7 +14,7 @@ class PatientCard extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { file: '', msg: '', token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Zjc1MjRhOWY2ZmIxMjI5YzQzOTk1MDciLCJpYXQiOjE2MDE1MTI2MTd9.epUEgnsc0aGEMrp1P-QVRanI5pU5vKvbOQ-OO6Y6Nn0' };
+        this.state = { file: '', msg: '', token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Zjc2NDQzYTU5ZTRmZDgzYzBlZDFhMjUiLCJpYXQiOjE2MDE1ODYyMzR9.sxlBmWD3K72chLtE0UVF16pczv8acAIotAO7xSwvzEk' };
     }
 
     onFileChange = (event) => {
@@ -30,7 +32,7 @@ class PatientCard extends React.Component {
 
         const t = this.state.token;
 
-        axios.post('http://localhost:3000/file/upload/single', data, {
+        axios.post('http://localhost:3000/file/single', data, {
             headers: {
                 'Authorization': `Bearer ${t}`
             }
@@ -44,37 +46,35 @@ class PatientCard extends React.Component {
 
     }
 
+    
+
     render() {
         return (
-            <form class="bg-gray-100 shadow-md rounded px-2 pt-2 pb-2">
-                <div class="flex flex-wrap justify-center">
-                </div>
-                <div class="my-2">
-                    <label class="block text-gray-700 text-sm font-bold">
-                        {this.props.name}
+            <div class="bg-gray-100 shadow-md rounded px-2 pt-2 pb-2 border-b-2 hover:bg-gray-500">
+                <div class="flex flex-wrap my-2">
+                    <label class="flex flex-wrap mx-1 text-gray-700 text-sm font-bold">
+                        {this.props.firstNameValue}
                     </label>
-                </div>
-                <div class="my-2">
-                    <label class="block text-gray-700 text-sm font-bold">
-                        {this.props.email}
+                    <label class="flex flex-wrap mx-1 text-gray-700 text-sm font-bold">
+                        {this.props.lastNameValue}
                     </label>
                     
                 </div>
-                <div class="flex flex-row-reverse">
-                    <div class="px-2 cursor-pointer" onClick={() => console.log('yes')}>
-                        <FontAwesomeIcon icon={faTrash} />
-                    </div>
-                    <div class="px-2 cursor-pointer" onClick={() => console.log('no ')}>
-                        <FontAwesomeIcon icon={faWrench} />
-                    </div>
-                    <div class="pr-10 cursor-pointer flex flex-wrap" onClick={() => console.log('yes')}>
-                        <input onChange={this.onFileChange} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="file" name="UploadAudio" accept=".mp3, .wav"/>
-                        <FontAwesomeIcon icon={faPlus} />
-                        <button disabled={!this.state.file} onClick={this.uploadFileData}>Upload</button>
-                    </div>
+                <div class='w-full relative justify-center flex flex-wrap justify-center'>
+                    <WidgetBar fetchUsers={this.props.fetchUsers} firstNameValue={this.props.firstNameValue} lastNameValue={this.props.lastNameValue} emailValue={this.props.emailValue} userId={this.props.userId} phoneValue={this.props.phoneValue} genderValue={this.props.genderValue} dateOfBirthValue={this.props.dateOfBirthValue} addressValue={this.props.addressValue}/>
+                </div> 
+                <div class="my-1">
+                    <label class="flex flex-wrap right-0 text-gray-700 text-sm font-bold">
+                        {this.props.emailValue}
+                    </label> 
+                </div>                 
+                <div class="pr-10 cursor-pointer flex flex-wrap">
+                    <input onChange={this.onFileChange} class="my-2 w-full" type="file" name="UploadAudio" accept=".mp3, .wav" />
+                    <FontAwesomeIcon icon={faPlus} />
+                    <button class='' disabled={!this.state.file} onClick={this.uploadFileData}>Upload</button>
                 </div>
-                
-            </form>
+                                
+            </div>
         )
     }
 }

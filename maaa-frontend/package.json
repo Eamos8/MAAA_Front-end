@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@dschoon/react-waves": "^3.0.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
@@ -27,7 +28,9 @@
     "reactjs-popup": "^2.0.4",
     "styled-components": "^5.1.1",
     "tailwind.macro": "^1.0.0-alpha.10",
-    "tailwindcss": "^1.5.2"
+    "tailwindcss": "^1.5.2",
+    "wavesurfer-react": "^2.0.5",
+    "wavesurfer.js": "^4.1.1"
   },
   "scripts": {
     "start": "npm run watch:css & react-scripts start",

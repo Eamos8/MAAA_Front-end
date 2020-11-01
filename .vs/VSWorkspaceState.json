@@ -2,10 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\maaa-frontend",
+    "\\maaa-frontend\\public",
     "\\maaa-frontend\\src",
     "\\maaa-frontend\\src\\Components",
     "\\maaa-frontend\\src\\Pages"
   ],
-  "SelectedNode": "\\maaa-frontend\\src\\App.jsx",
+  "SelectedNode": "\\maaa-frontend\\src\\Pages\\Home.js",
   "PreviewInSolutionExplorer": false
 }

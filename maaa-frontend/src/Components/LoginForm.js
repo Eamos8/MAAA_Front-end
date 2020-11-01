@@ -23,7 +23,6 @@ class LoginForm extends React.Component {
     }
 
     submitForm() {
-        console.log(this.state.emailValue)
     }
 
     render() {
