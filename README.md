@@ -8,7 +8,7 @@ npm install
 
 npm start
 
-Patient functionality works including all server communication
+Patient CRUD functionality works including all server communication
 
 File upload works
 
@@ -16,6 +16,6 @@ Audio visualisation works.
 
 User authentication is incorporated into server communication, however tokens are currently hard coded into state as login page does not communicate with server.
 
-Annotations (react-waves regions is currently static, dynamic creation/deletion of regions is not functional, however modification of current regions is *potentially problems with outdated github repo) 
+Annotations (react-waves regions is currently static, dynamic creation/deletion of regions is not functional, however modification of current regions is working *potentially problems with outdated github repo) 
 
 Consider WebAudio API
