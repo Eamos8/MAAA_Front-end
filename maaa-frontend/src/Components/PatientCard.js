@@ -14,7 +14,11 @@ class PatientCard extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { file: '', msg: '', token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Zjc2NDQzYTU5ZTRmZDgzYzBlZDFhMjUiLCJpYXQiOjE2MDE1ODYyMzR9.sxlBmWD3K72chLtE0UVF16pczv8acAIotAO7xSwvzEk' };
+        this.state = {
+            file: '',
+            msg: '',
+            token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Zjc2NDQzYTU5ZTRmZDgzYzBlZDFhMjUiLCJpYXQiOjE2MDE1ODYyMzR9.sxlBmWD3K72chLtE0UVF16pczv8acAIotAO7xSwvzEk'
+        };
     }
 
     onFileChange = (event) => {
@@ -61,7 +65,16 @@ class PatientCard extends React.Component {
                     
                 </div>
                 <div class='w-full relative justify-center flex flex-wrap justify-center'>
-                    <WidgetBar fetchUsers={this.props.fetchUsers} firstNameValue={this.props.firstNameValue} lastNameValue={this.props.lastNameValue} emailValue={this.props.emailValue} userId={this.props.userId} phoneValue={this.props.phoneValue} genderValue={this.props.genderValue} dateOfBirthValue={this.props.dateOfBirthValue} addressValue={this.props.addressValue}/>
+                    <WidgetBar
+                        fetchUsers={this.props.fetchUsers}
+                        firstNameValue={this.props.firstNameValue}
+                        lastNameValue={this.props.lastNameValue}
+                        emailValue={this.props.emailValue}
+                        userId={this.props.userId}
+                        phoneValue={this.props.phoneValue}
+                        genderValue={this.props.genderValue}
+                        dateOfBirthValue={this.props.dateOfBirthValue}
+                        addressValue={this.props.addressValue} />
                 </div> 
                 <div class="my-1">
                     <label class="flex flex-wrap right-0 text-gray-700 text-sm font-bold">
@@ -69,9 +82,17 @@ class PatientCard extends React.Component {
                     </label> 
                 </div>                 
                 <div class="pr-10 cursor-pointer flex flex-wrap">
-                    <input onChange={this.onFileChange} class="my-2 w-full" type="file" name="UploadAudio" accept=".mp3, .wav" />
-                    <FontAwesomeIcon icon={faPlus} />
-                    <button class='' disabled={!this.state.file} onClick={this.uploadFileData}>Upload</button>
+                    <input class="my-2 w-full"
+                        onChange={this.onFileChange}
+                        type="file"
+                        name="UploadAudio"
+                        accept=".mp3, .wav" />
+                            <FontAwesomeIcon icon={faPlus} />
+                    <button class=''
+                        disabled={!this.state.file}
+                        onClick={this.uploadFileData}>
+                        Upload
+                    </button>
                 </div>
                                 
             </div>

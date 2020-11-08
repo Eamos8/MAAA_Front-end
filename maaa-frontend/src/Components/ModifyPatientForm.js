@@ -117,9 +117,10 @@ class ModifyPatientForm extends React.Component {
         var newdate = date.split("/").reverse().join("-");
 
         return (
-            <Popup trigger={<div class="px-2 cursor-pointer" >
-                <FontAwesomeIcon icon={faWrench} />
-            </div>}
+            <Popup trigger={
+                <div class="px-2 cursor-pointer" >
+                    <FontAwesomeIcon icon={faWrench} />
+                </div>}
                 position="right top"
                 closeOnDocumentClick
             >
@@ -136,20 +137,29 @@ class ModifyPatientForm extends React.Component {
                                 <label class="block text-gray-700 text-sm font-bold mb-2">
                                     Email
                             </label>
-                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text"  value={this.state.emailValue} onChange={this.handleEmailChange} />
+                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                                    type="text"
+                                    value={this.state.emailValue}
+                                    onChange={this.handleEmailChange} />
                             </div>
                             <div class="flex flex-row">
                                 <div class="mb-2">
                                     <label class=" text-gray-700 text-sm font-bold mb-2">
                                         First Name
                                 </label>
-                                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="firstName" type="text" value={this.state.firstNameValue} onChange={this.handleFirstNameChange} />
+                                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                                        type="text"
+                                        value={this.state.firstNameValue}
+                                        onChange={this.handleFirstNameChange} />
                                 </div>
                                 <div class="mb-2">
                                     <label class=" text-gray-700 text-sm font-bold mb-2">
                                         Last Name
                                 </label>
-                                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="lastName" type="text" value={this.state.lastNameValue} onChange={this.handleLastNameChange} />
+                                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                                        type="text"
+                                        value={this.state.lastNameValue}
+                                        onChange={this.handleLastNameChange} />
                                 </div>
                             </div>
                             <div class="flex flex-row">
@@ -157,34 +167,48 @@ class ModifyPatientForm extends React.Component {
                                     <label class=" text-gray-700 text-sm font-bold mb-2" >
                                         Date of Birth
                                 </label>
-                                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="dateOfBirth" type="date" defaultValue={newdate} onChange={this.handleDOBChange} />
+                                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                                        type="date"
+                                        defaultValue={newdate}
+                                        onChange={this.handleDOBChange} />
                                 </div>
                                 <div class="mb-2 cursor-pointer">
                                     <label class=" text-gray-700 text-sm font-bold mb-2" >
                                         Gender
                                 </label>
-                                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="gender" type="text" value={this.state.genderValue} onChange={this.handleGenderChange} />
+                                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                                        type="text"
+                                        value={this.state.genderValue}
+                                        onChange={this.handleGenderChange} />
                                 </div>
                             </div>
                             <div class="mb-2">
                                 <label class="block text-gray-700 text-sm font-bold mb-2">
                                     Phone Number
                                 </label>
-                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="text" value={this.state.phoneValue} onChange={this.handlePhoneChange} />
+                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                                    type="text"
+                                    value={this.state.phoneValue}
+                                    onChange={this.handlePhoneChange} />
                             </div>
                             <div class="mb-2">
                                 <label class="block text-gray-700 text-sm font-bold mb-2">
                                     Address
                                 </label>
-                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="Address" value={this.state.addressValue} onChange={this.handleAddressChange} />
+                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                                    value={this.state.addressValue}
+                                    onChange={this.handleAddressChange} />
                             </div>
 
                             <div class="flex items-center justify-between">
-                                <button class="bg-white hover:bg-blue-100 text-blue-400 border-blue-400 border rounded font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onClick={() => this.submitAndExit(close)}>
-                                    Add Patient ++
+                                <button class="bg-white hover:bg-blue-100 text-blue-400 border-blue-400 border rounded font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    type="button"
+                                    onClick={() => this.submitAndExit(close)}>
+                                        Add Patient ++
                                 </button>
-                                <button class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 focus:outline-none" onClick={() => this.cancelAndExit(close)}>
-                                    Cancel
+                                <button class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 focus:outline-none"
+                                    onClick={() => this.cancelAndExit(close)}>
+                                        Cancel
                                 </button>
                             </div>
                         </form>

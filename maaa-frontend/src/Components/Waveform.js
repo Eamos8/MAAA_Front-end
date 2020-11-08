@@ -68,8 +68,9 @@ class Waveform extends Component {
     render() {
         return (
             <div className={'container example'}>
-                <div className="play button" onClick={() => { this.setState({ playing: !this.state.playing }) }}>
-                    {!this.state.playing ? 'Play' : 'Paused'}
+                <div
+                    onClick={() => { this.setState({ playing: !this.state.playing }) }}>
+                        {!this.state.playing ? 'Play' : 'Paused'}
                 </div>
                 <ReactWaves
                     audioFile={africa}
@@ -94,19 +95,8 @@ class Waveform extends Component {
                 >
                     <Regions
                         onSingleRegionUpdate={this.handleSingleRegionUpdate}
-                        onSingleRegionIn={() => { }}
-                        onSingleRegionOut={() => { }}
-                        onSingleRegionRemove={() => { }}
-                        onSingleRegionClick={() => { }}
-                        onSingleRegionOver={() => { }}
-                        onSingleRegionLeave={() => { }}
                         onRegionClick={this.handleRegionClick}
-                        onRegionIn={() => { }}
                         onRegionOut={this.handleRegionDone}
-                        onRegionRemove={() => { }}
-                        onRegionDblclick={() => {}}
-                        onRegionOver={() => { }}
-                        onRegionLeave={() => { }}
                         regions={this.state.regions}
                     />
                 </ReactWaves>

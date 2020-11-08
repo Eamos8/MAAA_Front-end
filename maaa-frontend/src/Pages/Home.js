@@ -3,7 +3,6 @@ import PatientCard from '../Components/PatientCard'
 import AddPatientForm from '../Components/AddPatientForm'
 import Popup from 'reactjs-popup';
 import Axios from 'axios';
-import Modal from '../Components/Modal'
 
 //Page for handling CRUD of users and files
 class Home extends React.Component {
@@ -45,12 +44,22 @@ class Home extends React.Component {
             <div>
                 <div class="w-1/5  flex-col">
                     <div class="flex flex-wrap bg-gray-300">
-                        <AddPatientForm fetchUsers={this.fetchUsers} />
+                        <AddPatientForm
+                            fetchUsers={this.fetchUsers} />
                     </div>
 
                     {users.map((user, index) => (
                         <div key={index}>
-                            <PatientCard fetchUsers={this.fetchUsers} firstNameValue={user.firstName} lastNameValue={user.lastName} emailValue={user.email} userId={user._id} phoneValue={user.phoneNumber} genderValue={user.gender} dateOfBirthValue={user.dateOfBirth} addressValue={user.address} />
+                            <PatientCard
+                                fetchUsers={this.fetchUsers}
+                                firstNameValue={user.firstName}
+                                lastNameValue={user.lastName}
+                                emailValue={user.email}
+                                userId={user._id}
+                                phoneValue={user.phoneNumber}
+                                genderValue={user.gender}
+                                dateOfBirthValue={user.dateOfBirth}
+                                addressValue={user.address} />
                         </div>
                     ))}
 

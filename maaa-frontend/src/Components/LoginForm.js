@@ -7,7 +7,10 @@ import { form } from 'react-bootstrap'
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { emailValue: "", passwordValue: "" }
+        this.state = {
+            emailValue: "",
+            passwordValue: ""
+        }
 
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
@@ -42,21 +45,31 @@ class LoginForm extends React.Component {
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                             Email
                         </label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" ref="loginInput" placeholder="sample@gmail.com" onChange={this.handleEmailChange} />
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                            type="text"
+                            ref="loginInput"
+                            placeholder="sample@gmail.com"
+                            onChange={this.handleEmailChange} />
                     </div>
                     <div class="mb-6">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
                             Password
                             </label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" onChange={this.handlePasswordChange} />
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                            type="password"
+                            placeholder="******************"
+                            onChange={this.handlePasswordChange} />
                     </div>
                     <div class="flex items-center justify-between">
-                        <button class="bg-white hover:bg-blue-100 text-blue-400 border-blue-400 border rounded font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onClick={() => this.submitForm()}>
-                            Login
+                        <button class="bg-white hover:bg-blue-100 text-blue-400 border-blue-400 border rounded font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            type="button"
+                            onClick={() => this.submitForm()}>
+                                Login
                             </button>
-                        <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-                            Forgot Password?
-                            </a>
+                        <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+                            href="#">
+                                Forgot Password?
+                        </a>
                     </div>
                 </form>
             </div>
